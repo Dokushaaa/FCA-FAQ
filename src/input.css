@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[96rem] p-6 w-full mx-auto;
+}
+
+@layer components{
+      /* logo */
+      .header__logo{
+        @apply h-[4rem] w-[10rem]  z-50
+    }
+    /* header__wrapper */
+    .header__fLayer{
+        @apply flex flex-row justify-between items-center
+    }
+    /* header mobile layer */
+    .header__fLayer{
+        @apply border-b-2 border-black p-5 z-50
+    }
+    /* header__nav mobile */
+    .navm__socials{
+        @apply flex flex-col justify-between py-5 items-center text-center
+    }
+    .navm__socials .slogan{
+        @apply w-[14rem] h-[5rem] bg-cover
+    }
+    .navm__socials li{
+        @apply text-dark text-lg p-2
+    }
+    .navm__socials li a p{
+        @apply font-medium text-light mt-2 px-2 py-1 
+    }
+    .navm__socials .colorful{
+        @apply hover:bg-fcaGreen
+    }
+    
+    .header__banner{
+        @apply bg-headerBanner bg-cover
+        h-[700px]
+        md:h-[100vh];
+    }
+    /* header__nav desktop */
+    .header__nav{
+        @apply text-2xl p-3
+    }
+    .header__nav .header__clickables{
+        @apply hidden md:flex md:flex-row md:gap-1 items-center text-center justify-evenly
+    }
+    .header__nav .header__clickables .colorful{
+        @apply text-2xl text-center justify-center self-center p-2
+    }
+    .header__nav .header__clickables li{
+        @apply border-r-2 border-gray-light pr-10 py-1
+    }
+    .header__nav .header__clickables li:last-of-type{
+        @apply border-none
+    }
+    .header__navm .colorful{
+        @apply hover:bg-fcaGreen
+    }
+    .header__cList{
+        @apply hidden md:flex md:flex-row md:gap-5 md:justify-between  text-center items-center;
+    }
+    /* action */
+    .header__action{ 
+        @apply bg-[light] md:hidden absolute  right-[0]  top-[130px] w-[0] h-[100vh] px-0 pt-0 overflow-hidden shadow-md
+        md:static md:h-fit md:w-fit md:shadow-none z-50 transition-all duration-500;
+    }
+    .header__action.open{
+        @apply w-[100%] px-5  bg-[#f2f2f2] z-40 transition-all duration-500 
+    }
+    .header__action .header__navm{
+        @apply  border-b-[2px]  flex flex-col gap-7 z-50  pt-7 pb-5
+        md:hidden text-center;
+    }
+   
+    .header__action .header__navm li a p{
+        @apply font-medium text-light text-lg px-2 py-1
+    }
+     .header__action .header__navm li a{
+        @apply font-medium text-dark text-lg px-2 py-1 
+    }
+   
+    .header__action .header__btn{
+        @apply pt-5 flex flex-col gap-3
+        md:flex md:flex-row-reverse
+    }
+    .header__action .header__kamote{
+        @apply flex gap-5
+    }
+    .header__action .header__btn a{
+        @apply gap-[1rem] items-center text-center hover:text-Berde   
+    }
+
+    .header__action .header__btn a:last-child{
+        @apply w-[7.5rem] flex font-medium p-0
+        hover:to-Berde
+    }
+    .header__action .header__btn a{
+        @apply text-center pb-2
+    }
+    
+    
+    /* burger menu */
+    .burgir__menu{
+        @apply md:hidden z-50
+    }
+    .burgir__menu span{
+        @apply w-[1.75rem] h-[.2rem] bg-dark block rounded-full transition-all duration-500;
+    }
+    .burgir__menu span:nth-child(2){
+        @apply my-1;
+    }
+    .burgir__menu.open{
+        @apply animate-pulse
+    }
+      .burgir__menu.open span:first-child{
+        @apply bg-[#33503a]  transform translate-x-[18px] translate-y-[-2px] rotate-[45deg] transition-all duration-500 z-50 
+    }
+    .burgir__menu.open span:nth-child(2){
+        @apply transition-all duration-500 z-50  w-10
+    }
+    .burgir__menu.open span:last-child{
+        @apply bg-[#d8a727] transform translate-x-[18px] translate-y-[2px] rotate-[-45deg] transition-all duration-500 z-50 
+    }
+    
+
+
+
+
+    /* footer */
+    .footer{
+        @apply flex flex-col items-center
+    }
+    .footer__content{ 
+        @apply flex flex-col gap-[1rem] mx-auto items-center border-b-2 border-gray pb-10
+    }
+    .footer__content a{ 
+        @apply w-[15rem]
+    }
+    .footer__content__img{
+        @apply bg-cover w-[15rem] h-[5rem]
+    }
+    
+}
+@layer utilities{
+    .btn{
+        @apply  py-[.5rem] text-center px-[1rem] justify-center inline-block w-[7.5rem] p-[1rem] rounded-lg border-transparent
+        border-[1px] text-base font-medium
+        hover:scale-[1.05] brightness-100
+    }
+    .btn.bg--fb-blue{
+        @apply bg-[#3b5897] hover:bg-[#1573e5] rounded-lg text-light h-[3rem] w-[8rem] 
+    }
+    .btn.bg--transparent{
+        @apply bg-transparent hover:bg-fcaGreen border-fcaGreen  border-2
+    }
+    .btn.bg--fcaGreen-Secondary{
+        @apply bg-[#28941e] hover:bg-[#daa625] border-fcaGreen  text-light
+    }
+    .btn.bg--give{
+        @apply bg-[#daa625] text-light p-0 mx-0 h-[3rem] w-[8rem] justify-between text-base items-center;
+    }
+}
